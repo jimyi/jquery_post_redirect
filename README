@@ -1,0 +1,7 @@
+Overview
+-------------
+Redirects to a URL as an HTTP POST request with additional URL encoded parameters sent in the POST body.
+
+Syntax
+-------------
+$.postRedirect("http://someurl.com", {param: "value"});
