@@ -15,12 +15,13 @@
  */
 (function($){
     $.postRedirect = function(url, params) {
-		var form = $('<form action="' + url + '" method="post">').appendTo("body");
-		if (params) {
-			for (var name in params) {
-				form.append('<input type="hidden" name="' + name + '" value="' + params[name] + '" />');
-			}
-		}
-		form.submit();
-	};
+        $("body").append('<form action="' + url + '" method="post" style="display:none" id="jquery_post_redirect"></form>');
+        var form = $("#jquery_post_redirect");
+        if (params) {
+            for (var name in params) {
+                form.append('<input type="hidden" name="' + name + '" value="' + params[name] + '" />');
+            }
+        }
+        form.trigger("submit");
+    };
 })(jQuery);
